@@ -15,12 +15,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author java
+ * @author Olavo Henrique Dias
  */
 public class ScheduleManager extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
