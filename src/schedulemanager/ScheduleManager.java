@@ -6,39 +6,29 @@
 package schedulemanager;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import schedulemanager.screens.FXLoginForm;
 
 /**
- *
+ * The Schedule Manager Program
  * @author Olavo Henrique Dias
  */
 public class ScheduleManager extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+
+        /***********************************************************************
+         * Create the Main Screen
+         **********************************************************************/
+        FXLoginForm formMainScreen = new FXLoginForm("schedulemanager/wguTheme.css");
+        formMainScreen.setCurrentStage(primaryStage);
+                
+        primaryStage.setTitle(formMainScreen.getTitle());
+        primaryStage.setScene(formMainScreen.getScene());
+        primaryStage.setMinHeight(450);
+        primaryStage.setMinWidth(450);
         
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
