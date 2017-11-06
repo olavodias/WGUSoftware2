@@ -191,9 +191,10 @@ public class FXLoginForm extends FXScreen {
                
         /* Set UI Objects */
         lblField_UserName.setText(super.getResourceBundle().getString("string_user"));
+        txtField_UserName.setPromptText(super.getResourceBundle().getString("string_user_prompttext"));
         gridCenter.add(lblField_UserName, 0, 1);
         gridCenter.add(txtField_UserName, 1, 1);
-
+        
         lblField_Password.setText(super.getResourceBundle().getString("string_password"));
         txtField_Password.setPromptText(super.getResourceBundle().getString("string_password_prompttext"));
         gridCenter.add(lblField_Password, 0, 2);
@@ -248,6 +249,8 @@ public class FXLoginForm extends FXScreen {
         lblHeader.setText(super.getResourceBundle().getString("string_formheader"));
 
         lblField_UserName.setText(super.getResourceBundle().getString("string_user"));
+        txtField_UserName.setPromptText(super.getResourceBundle().getString("string_user_prompttext"));
+        
         lblField_Password.setText(super.getResourceBundle().getString("string_password"));
         txtField_Password.setPromptText(super.getResourceBundle().getString("string_password_prompttext"));
 
