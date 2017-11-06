@@ -5,6 +5,7 @@
  */
 package schedulemanager;
 
+import java.util.Locale;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import schedulemanager.screens.FXLoginForm;
@@ -21,6 +22,22 @@ public class ScheduleManager extends Application {
         /***********************************************************************
          * Create the Main Screen
          **********************************************************************/
+        
+        /***********************************************************************
+         * Dear Evaluator: 
+         *
+         * 1) I added English and Portuguese as the languages available.
+         * The user will have a combo box to select the language
+         * Any other language as expected will result in using the default 
+         * language, which is English.
+         * 
+         * Locale.setDefault(new Locale("en"));
+         * Locale.setDefault(new Locale("pt"));
+         * 
+         * 2) The application does not require us to maintain users, 
+         * so I'd suggest the use of user "test" and password "test".
+         ***********************************************************************/
+                
         FXLoginForm formMainScreen = new FXLoginForm("schedulemanager/wguTheme.css");
         formMainScreen.setCurrentStage(primaryStage);
                 

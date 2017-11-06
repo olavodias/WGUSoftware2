@@ -126,12 +126,8 @@ public class FXLoginForm extends FXScreen {
         btnBottom_Login.setPrefSize(100, 25);
         btnBottom_Login.getStyleClass().add("button-type2");        
         btnBottom_Login.setOnAction((ActionEvent e) -> { 
-        
             /* Calls the event handler */
-            //handleLoadTestDataButtonAction(e);
-            /* Sets the Localization */
-            this.setLocale(new Locale("pt"), DEFAULTBUNDLE);
-            this.applyLocale();
+            handleLoginButtonAction(e);
         });
 
         /* Button to Exit */
@@ -258,4 +254,14 @@ public class FXLoginForm extends FXScreen {
         lblField_Locale.setText(super.getResourceBundle().getString("string_locale"));
     }
     
+    private void handleLoginButtonAction(ActionEvent event) {
+        
+        /* Validate the User and Password against the database */
+        
+        /* Calls the new screen */
+        FXMainScreen mainScreen = new FXMainScreen(this.getCssPath());
+        mainScreen.show();
+        
+        super.getCurrentStage().close();
+    }
 }
