@@ -28,6 +28,7 @@ public class ScheduleManager extends Application {
         primaryStage.setScene(formMainScreen.getScene());
         primaryStage.setMinHeight(450);
         primaryStage.setMinWidth(450);
+        primaryStage.setResizable(false);
         
         primaryStage.show();
     }

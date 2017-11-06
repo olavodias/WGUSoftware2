@@ -5,6 +5,8 @@
  */
 package schedulemanager.screens;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -218,6 +220,45 @@ public abstract class FXScreen {
      * Creates the Form Scene
      */
     protected abstract void createScene();
+    
+    private ResourceBundle _currentResourceBundle;
+    
+    /**
+     * Gets the Resource Bundle used for Localization
+     * @return A ResourceBundle object to retrieve localized content
+     */
+    public ResourceBundle getResourceBundle() {
+        /* If there is no ResourceBundle, create a Default one */
+        if (_currentResourceBundle == null)
+            _currentResourceBundle = ResourceBundle.getBundle("Default", Locale.getDefault());
+        
+        return _currentResourceBundle;
+    }
+    
+    /**
+     * Sets the Resource Bundle for the Screen 
+     * @param resourceBundle A ResourceBundle object to use to retrieve localized content
+     */
+    protected void setResourceBundle(ResourceBundle resourceBundle) {
+        _currentResourceBundle = resourceBundle;
+    }
+    
+    /**
+     * Sets the Localization Information for the Form
+     * @param locale        The Locale
+     * @param bundleName    Name of the Bundle
+     */
+    protected final void setLocale(Locale locale, String bundleName) {
+        if (bundleName.equals(""))
+            setResourceBundle(ResourceBundle.getBundle("Default", locale));    
+        else
+            setResourceBundle(ResourceBundle.getBundle(bundleName, locale));
+    }
+    
+    /**
+     * Sets the fields to the proper localization string
+     */
+    protected abstract void applyLocale();
     
     /**
      * Applies the CSS if there is one
